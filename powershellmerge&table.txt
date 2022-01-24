@@ -1,0 +1,111 @@
+$xl = New-Object -ComObject Excel.Application -Property @{Visible = $true}
+$strPath1="C:\Users\Admin\Documents\UiPath\test\usecase4.xlsx"
+$wb = $xl.Workbooks.Open($strPath1)
+$sh = $wb.Worksheets.Item('Sheet1')
+
+$xlThin = 3
+$xlContinuous = 1
+$xlColorIndexBlue = 0
+$mergecells=$sh.Range('d2:x2')
+$mergecells2=$sh.Range('d3:m3')
+$mergecells3=$sh.Range('n3:x3')
+$mergecells4=$sh.Range('d4:h4')
+$mergecells5=$sh.Range('i4:m4')
+$mergecells6=$sh.Range('n4:r4')
+$mergecells7=$sh.Range('s4:x4')
+$mergecells8=$sh.Range('b2:c2')
+$mergecells9=$sh.Range('b3:b6')
+$mergecells10=$sh.Range('b7:b9')
+$mergecells.MergeCells = $true
+
+$mergecells2.MergeCells = $true
+
+$mergecells3.MergeCells = $true
+
+$mergecells4.MergeCells = $true
+
+$mergecells5.MergeCells = $true
+
+$mergecells6.MergeCells = $true
+
+$mergecells7.MergeCells = $true
+
+$mergecells8.MergeCells = $true
+
+$mergecells9.MergeCells = $true
+
+$mergecells10.MergeCells = $true 
+$range= $sh.Range('d2:x2')
+[Void]$range.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range2= $sh.Range('d2:x2')
+[Void]$range2.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range3= $sh.Range('d3:m3')
+[Void]$range3.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range4= $sh.Range('n3:x3')
+[Void]$range4.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range5= $sh.Range('d4:h12')
+[Void]$range5.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range6= $sh.Range('i4:m12')
+[Void]$range6.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range7= $sh.Range('n4:r12')
+[Void]$range7.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range8= $sh.Range('b2:c2')
+[Void]$range8.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range9= $sh.Range('b3:c6')
+[Void]$range9.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range10= $sh.Range('b7:c12')
+[Void]$range10.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$range11= $sh.Range('s4:x12')
+[Void]$range11.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$sh.Cells.Item(2,2)="Table"
+$sh.Cells.Item(2,4)="Actual"
+$sh.Cells.Item(3,4)="JAN"
+$sh.Cells.Item(3,14)="DEC"
+$sh.Cells.Item(4,4)="DAY"
+$sh.Cells.Item(4,9)="MONTH"
+$sh.Cells.Item(4,14)="DAY"
+$sh.Cells.Item(4,19)="MONTH"
+$sh.Cells.Item(7,2)="Geo"
+$xlCenter = -4108
+$sh.Range("B2").HorizontalAlignment = $xlCenter
+$sh.Range("D2").HorizontalAlignment = $xlCenter
+$sh.Range("D3").HorizontalAlignment = $xlCenter
+$sh.Range("N3").HorizontalAlignment = $xlCenter
+$sh.Range("D4").HorizontalAlignment = $xlCenter
+$sh.Range("I4").HorizontalAlignment = $xlCenter
+$sh.Range("N4").HorizontalAlignment = $xlCenter
+$sh.Range("S4").HorizontalAlignment = $xlCenter
+$sh.Range("B7").HorizontalAlignment = $xlCenter
+$sh.Cells.Item(5,4)="DAY1"
+$sh.Cells.Item(5,5)="DAY2"
+$sh.Cells.Item(5,6)="DAY3"
+$sh.Cells.Item(5,7)="DAY4"
+$sh.Cells.Item(5,8)="DAY5"
+$sh.Cells.Item(5,9)="1"
+$sh.Cells.Item(5,10)="2"
+$sh.Cells.Item(5,11)="3"
+$sh.Cells.Item(5,12)="4"
+$sh.Cells.Item(5,13)="5"
+$sh.Cells.Item(5,14)="DAY1"
+$sh.Cells.Item(5,15)="DAY2"
+$sh.Cells.Item(5,16)="DAY3"
+$sh.Cells.Item(5,17)="DAY4"
+$sh.Cells.Item(5,18)="DAY5"
+$sh.Cells.Item(5,19)="1"
+$sh.Cells.Item(5,20)="2"
+$sh.Cells.Item(5,21)="3"
+$sh.Cells.Item(5,22)="4"
+$sh.Cells.Item(5,23)="5"
+$sh.Cells.Item(3,3)="Area"
+$sh.Cells.Item(4,3)="Excel"
+$sh.Cells.Item(5,3)="Grab"
+$sh.Cells.Item(6,3)="Dedicate"
+$sh.Cells.Item(7,3)="TYpe1"
+$sh.Cells.Item(8,3)="TYpe2"
+$sh.Cells.Item(9,3)="TYpe3"
+$sh.Cells.Item(10,3)="OPTION_TYpe1"
+$sh.Cells.Item(11,3)="OPTION_TYpe2"
+$sh.Cells.Item(12,3)="OPTION_TYpe3"
+$wb.Save()
+$wb.close()
+$xl.Quit()

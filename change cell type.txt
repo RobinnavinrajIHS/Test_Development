@@ -1,0 +1,8 @@
+$ExcelObject = new-Object -comobject Excel.Application
+$strPath1="D:\Powershell\New Microsoft Excel Worksheet.xlsx"
+$ActiveWorkbook = $ExcelObject.WorkBooks.Open($strPath1)
+$ActiveWorksheet = $ActiveWorkbook.Worksheets.Item(1)
+$ActiveWorksheet.columns.item('A').NumberFormat = "0"
+$ActiveWorkbook.Save()
+$ActiveWorkbook.close($true)
+$ExcelObject.quit()
